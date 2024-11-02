@@ -308,7 +308,7 @@ input[type="checkbox"].toggle:checked + label::after{
         justify-content: space-between;
         position: absolute;
         height: 30vh;
-        width: auto;
+        width: 300px;
         transform: translatey(36vh);
     }
     .high-score {
