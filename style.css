@@ -1,0 +1,322 @@
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    line-height: 1;
+    background-color: #007000;
+    transition: ease-in-out 300ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    display: flex;
+    width: auto;
+    text-align: center;
+    font-size: 7vh;
+    height: auto;
+    top: 7vh;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    color: #009000;
+    left: 50%;
+}
+.grid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:white ; */
+    
+}
+.main-game {
+    overflow: hidden;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 300px;
+    height: 70vh;
+    border: 0.5em solid #309930;
+    position: absolute;
+    top: 50%;
+    grid-auto-rows:1fr;
+    transform:translatey(-50%);
+    transition:border 300ms ease-in-out;
+}
+.score{
+    opacity: 30%;
+    display: none;
+    font-size: 10rem;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.high-score{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    left: 1rem;
+    top: 0rem;
+    font-size: 10vw;
+    color: #12FF12;
+    transition: 300ms ease-in-out;
+}
+#highscore-text{
+    font-size: 5vw;
+}
+
+.start{
+    position:absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translatey(-50%);
+}
+.start > .start-btn {
+    cursor: pointer;
+    color: #007000;
+    border-radius: 10px;
+    border: 2px solid #90FF90;
+    background-color: #00c000;
+    font-size: 2rem;
+    padding: .5em 1em .5em 1em;
+    transition: 300ms ease-in-out;
+}
+.start-btn:hover{
+    transition: none;
+    opacity: 70%;
+}
+#hardmode1 + label{
+    display: none;
+}
+input[type="checkbox"].toggle{
+    opacity:0;
+    position:absolute;
+    top:-99999px;
+    left:-999999px;
+}
+input[type="checkbox"].toggle + label{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: .5em;
+    top: .5em;
+    transition: ease-in-out 300ms;
+    color: #12FF12;
+    font-size: 1.5em;
+    
+}
+input[type="checkbox"].toggle:disabled + label{
+    color: #444444;
+}
+input[type="checkbox"].toggle:disabled + label::before{
+    background: #204420;
+}
+input[type="checkbox"].toggle:disabled + label::after{
+    background-color: #222222;
+}
+input[type="checkbox"].toggle:checked:disabled + label{
+    color: #444444;
+}
+input[type="checkbox"].toggle:checked:disabled + label::before{
+    background: #204420;
+}
+input[type="checkbox"].toggle:checked:disabled + label::after{
+    background-color: #222222;
+}
+input[type="checkbox"].toggle:focus + label::before{
+    outline: 1px solid black;
+}
+input[type="checkbox"].toggle:checked + label{
+    color: #c00000;
+}
+input[type="checkbox"].toggle + label::before{
+    content: "";
+    width: 2em;
+    height: 1em;
+    border-radius: 1em;
+    background-color: #90FF90;
+    margin-right: .25em;
+}
+input[type="checkbox"].toggle:checked + label::before{
+    background-color: #FF9090;
+}
+input[type="checkbox"].toggle + label::after{
+    content: "";
+    position: absolute;
+    left: 0.05em;
+    width: 0.9em;
+    height: 0.9em;
+    border-radius:50% ;
+    background-color: #009900;
+    transition: ease-in-out 300ms;
+}
+input[type="checkbox"].toggle:checked + label::after{
+    left:1em;
+    background-color: #C00000;
+}
+/* Characters */
+.character {
+    width: auto;
+    height: auto;
+    position:relative;
+}
+.body {
+    height: 50%;
+    width:50%;
+    background-color: #00c000;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius:40% ;
+    border-top-right-radius: 40%;
+    transform: translatex(-50%);
+    display: flex;
+    justify-content: center;
+    transition:300ms ease-in-out;
+}
+.body > .head > .horn {
+    opacity:0;
+    transition: 300ms ease-in-out;
+}
+
+
+.body#red > .head > .horn {
+    opacity: 100;
+    position: absolute;
+    height: 60%;
+    background-color: inherit;
+    width: 20%;
+    top: -20%;
+    display: flex;
+    justify-content: center;
+} 
+.horn.one {
+    left: -5%;
+    transform: rotate(-10deg);
+    border-top-right-radius:100px ;
+}
+.horn.two{
+    right: -5%;
+    transform: rotate(10deg);
+    border-top-left-radius:100px ;
+}
+.body#red > .head > .horn>.smallhorn{
+    opacity: 100;
+    width: 70%;
+    height: 100%;
+    background-color: #300000;
+    position: absolute;
+}
+.horn.one>.smallhorn {
+    left:-3px;
+    transform: rotate(5deg);
+    border-top-right-radius:100px ;
+}
+.horn.two > .smallhorn {
+    right:-3px;
+    transform: rotate(-5deg);
+    border-top-left-radius:100px ;
+}
+
+.body#red{
+    background-color: #c00000;
+}
+
+.pos1{
+    transition:100ms ease-in-out;
+    left: 50%;
+}
+.pos2{
+    transition:100ms ease-in-out;
+    left: 150%;
+}
+.pos3{
+    transition:100ms ease-in-out;
+    left: 250%;
+}
+.pos4{
+    transition:100ms ease-in-out;
+    left: 350%;
+}
+.head {
+    background-color: inherit;
+    border-radius: 50%;
+    width: 3vh;
+    height: 3vh;
+    top: -45%;
+    position: absolute;
+}
+/* Joystick */
+.joystick {
+    display: none;
+}
+.joy{
+    width: auto;
+    background-color: transparent;
+    border: none;
+    color: #309930;
+    font-size: 20vh;
+    text-align: center;
+    align-items: center;
+    transition:color 300ms ease-in-out;
+}
+.joy.red{
+    color: #993030;
+}
+.joy.active{
+    color: #304430;
+    transition: none;
+}
+/* Obstacles */
+.obstacle1{
+    border: 1px #000000 solid;
+    top: 0;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 5vh;
+    height: 5vh;
+    border-radius: 100%;
+    background-color: red;
+    transition: 300ms ease-in-out;
+}
+
+
+@media (max-width: 1000px) {
+    #hardmode + label {
+        display: none;
+    }
+    #hardmode1 + label{
+        display: flex;
+    }
+    .main-game {
+        height: 50vh;
+        top: 40%;
+        
+    }
+    .joystick {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        height: 30vh;
+        width: auto;
+        transform: translatey(31vh);
+    }
+    .high-score {
+        font-size: 3rem;
+        top: .5rem;
+    }
+    #highscore-text {
+        display: none;
+    }
+
+}
