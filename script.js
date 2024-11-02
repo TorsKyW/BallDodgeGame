@@ -15,7 +15,7 @@ let dropInterval;
 let game = 0;
 let mode = 0;
 let characterPosition = 1;
-let difficulty = 10;
+let difficulty = 15;
 let i = 0;
 let randomTopGrid = Math.floor(Math.random() * 4);
 const start = () => {
@@ -63,7 +63,7 @@ hardmode.oninput = () => {
     startbtn.style.backgroundColor = "#c00000";
     startbtn.style.borderColor = "#FF9090";
     startbtn.style.color = "#300000";
-    difficulty = 25;
+    difficulty = 20;
     body.style.backgroundColor = "#300000";
     maingame.style.borderColor = "#993030";
     title.style.color = "#500000";
@@ -78,7 +78,7 @@ hardmode.oninput = () => {
     startbtn.style.backgroundColor = "#00c000";
     startbtn.style.borderColor = "#90FF90";
     startbtn.style.color = "#007000";
-    difficulty = 10;
+    difficulty = 15;
     title.style.color = "#009000";
     body.style.backgroundColor = "#007000";
     maingame.style.borderColor = "#309930";
@@ -96,7 +96,7 @@ hardmode1.oninput = () => {
     startbtn.style.backgroundColor = "#c00000";
     startbtn.style.borderColor = "#FF9090";
     startbtn.style.color = "#300000";
-    difficulty = 25;
+    difficulty = 20;
     body.style.backgroundColor = "#300000";
     maingame.style.borderColor = "#993030";
     title.style.color = "#500000";
@@ -111,7 +111,7 @@ hardmode1.oninput = () => {
     startbtn.style.backgroundColor = "#00c000";
     startbtn.style.borderColor = "#90FF90";
     startbtn.style.color = "#007000";
-    difficulty = 10;
+    difficulty = 15;
     title.style.color = "#009000";
     body.style.backgroundColor = "#007000";
     maingame.style.borderColor = "#309930";
