@@ -300,7 +300,7 @@ input[type="checkbox"].toggle:checked + label::after{
     .main-game {
         height: 50vh;
         background-color: #300000;
-        top: 40%;
+        top: 45vh;
         
     }
     .joystick {
@@ -310,7 +310,7 @@ input[type="checkbox"].toggle:checked + label::after{
         position: absolute;
         height: 30vh;
         width: auto;
-        transform: translatey(31vh);
+        transform: translatey(36vh);
     }
     .high-score {
         font-size: 3rem;
