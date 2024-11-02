@@ -15,7 +15,7 @@ let dropInterval;
 let game = 0;
 let mode = 0;
 let characterPosition = 1;
-let difficulty = 4;
+let difficulty = 10;
 let i = 0;
 let randomTopGrid = Math.floor(Math.random() * 4);
 const start = () => {
@@ -28,13 +28,13 @@ const start = () => {
   startbtn.innerHTML = "RESTART";
   startbtnWrap.style.display = "none";
   game = 1;
-  setTimeout(()=>{dropInterval = setInterval(drop, 0)},500)
+  setTimeout(()=>{dropInterval = requestAnimationFrame(drop)},500)
 };
 const checkContact = () => {
-  if (randomTopGrid == characterPosition - 1 && i >= 516) {
+  if (randomTopGrid == characterPosition - 1 && i >= 530) {
     hardmode1.disabled = false;
     hardmode.disabled = false;
-    clearInterval(dropInterval);
+    cancelAnimationFrame(dropInterval);
     i = 0;
     game=0;
     // do poprawienia
@@ -53,6 +53,9 @@ const drop = () => {
     topGrid[randomTopGrid].innerHTML = "";
     randomTopGrid = Math.floor(Math.random() * 4);
   }
+  if(game==1){
+    dropInterval = requestAnimationFrame(drop);
+  }
 };
 hardmode.oninput = () => {
   if (hardmode.checked) {
@@ -60,7 +63,7 @@ hardmode.oninput = () => {
     startbtn.style.backgroundColor = "#c00000";
     startbtn.style.borderColor = "#FF9090";
     startbtn.style.color = "#300000";
-    difficulty = 6;
+    difficulty = 25;
     body.style.backgroundColor = "#300000";
     maingame.style.borderColor = "#993030";
     title.style.color = "#500000";
@@ -75,7 +78,7 @@ hardmode.oninput = () => {
     startbtn.style.backgroundColor = "#00c000";
     startbtn.style.borderColor = "#90FF90";
     startbtn.style.color = "#007000";
-    difficulty = 4;
+    difficulty = 10;
     title.style.color = "#009000";
     body.style.backgroundColor = "#007000";
     maingame.style.borderColor = "#309930";
@@ -93,7 +96,7 @@ hardmode1.oninput = () => {
     startbtn.style.backgroundColor = "#c00000";
     startbtn.style.borderColor = "#FF9090";
     startbtn.style.color = "#300000";
-    difficulty = 6;
+    difficulty = 25;
     body.style.backgroundColor = "#300000";
     maingame.style.borderColor = "#993030";
     title.style.color = "#500000";
@@ -108,7 +111,7 @@ hardmode1.oninput = () => {
     startbtn.style.backgroundColor = "#00c000";
     startbtn.style.borderColor = "#90FF90";
     startbtn.style.color = "#007000";
-    difficulty = 4;
+    difficulty = 10;
     title.style.color = "#009000";
     body.style.backgroundColor = "#007000";
     maingame.style.borderColor = "#309930";
