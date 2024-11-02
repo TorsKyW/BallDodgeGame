@@ -28,7 +28,7 @@ const start = () => {
   startbtn.innerHTML = "RESTART";
   startbtnWrap.style.display = "none";
   game = 1;
-  dropInterval = setInterval(drop, 0);
+  setTimeout(()=>{dropInterval = setInterval(drop, 0)},500)
 };
 const checkContact = () => {
   if (randomTopGrid == characterPosition - 1 && i >= 516) {
@@ -151,5 +151,5 @@ joystick[1].addEventListener("click", () => {
     setTimeout(()=>{joystick[1].classList.remove('active')},0);
   }
 });
-startbtn.addEventListener("click", ()=>{setTimeout(start,100)});
+startbtn.addEventListener("click", start);
 addEventListener("keydown", move);
